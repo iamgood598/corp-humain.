@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Corps humain interactif</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f8ff;
+    }
+    h1 {
+      color: #333;
+    }
+    .buttons {
+      margin: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #info {
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Explorateur du corps humain</h1>
+  <p>Clique sur une partie du corps pour en savoir plus !</p>
+
+  <div class="buttons">
+    <button onclick="showInfo('cerveau')">Cerveau</button>
+    <button onclick="showInfo('coeur')">Cœur</button>
+    <button onclick="showInfo('poumons')">Poumons</button>
+  </div>
+
+  <div id="info">Sélectionne une partie du corps.</div>
+
+  <script>
+    function showInfo(part) {
+      let text = '';
+
+      if (part === 'cerveau') {
+        text = 'Le cerveau contrôle les pensées, la mémoire et les actions du corps.';
+      } else if (part === 'coeur') {
+        text = 'Le cœur pompe le sang dans tout le corps.';
+      } else if (part === 'poumons') {
+        text = 'Les poumons permettent de respirer en apportant de l’oxygène.';
+      }
+
+      document.getElementById('info').innerText = text;
+    }
+  </script>
+
+</body>
+</html>
